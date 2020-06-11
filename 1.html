@@ -1,8 +1,41 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <h1>Excel VBA Macro code formulas references</h1>
+  
+  <h2>Code to open all excel files in a folder</h2>
+  <pre>
+  Sub OpenFiles()
+Dim ThisSheet, Othersheet As Workbook
+Application.ScreenUpdating = False
 
-<h1>1</h1>
+Set ThisSheet = ActiveWorkbook 		'this sheet is the excel file where the macro is
+
+Dim MyFolder As String
+Dim MyFile As String
+
+MyFolder = ThisSheet.Path & "\FOLDER NAME\"           'full path to folder where files live - needs a \ at the end - folder needs to be in same place as ThisSheet
+
+MyFile = Dir(MyFolder & "*.xl*")                                'list all excel files in folder
+
+
+Do While MyFile <> ""                                          'open each file in folder until none left
+Set Othersheet = Workbooks.Open(MyFolder & MyFile)             'Othersheet is prison return file
+
+CODE TO DO THINGS HERE
+
+Othersheet.Close SaveChanges:=False
+MyFile = Dir
+
+Loop
+
+End Sub
+  
+  </pre>
+
+<br>
+<hr>
+
 
 </body>
 </html>
