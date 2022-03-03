@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {color:white;margin-top:0;margin-bottom:0;}
+p {color:white;margin-top:0;margin-bottom:0;}
+
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+background-color: #402020;
+}
+
+td, th {
+color:white;
+margin-top:0;
+margin-bottom:0;
+border: 1px solid #bbbbbb;
+text-align:left;
+padding: 4px;
+}
+
+img.one {
+  width: 100%;
+}
+
+div.top {
+ position: fixed;
+ border-style: solid;
+ border-color: #BBBBBB;
+ background-color: #806040;
+ padding:4px;
+ top: 10px;
+ left: 10px;
+}
+
+div.legend {
+ border-style: solid;
+ border-color: #BBBBBB;
+ position: fixed;
+ display:  none;
+ padding:  4px;
+ bottom:   5px;
+ left:     10px;
+ width:    100;
+ height:   40%;
+ overflow-y: auto;
+}
+
+div.codes {
+ border-style: solid;
+ border-color: #BBBBBB;
+ padding:  4px;
+
+ background-color: #402020;
+ position: fixed;
+ display:  none;
+ bottom:   5px;
+ right:    10px;
+ width:    200;
+ height:   20%;
+ overflow-y: auto;
+}
+
+div.scroll {
+ margin:4px, 4px;
+ padding:4px;
+ width: 100%;
+ height: 500px;
+ overflow-x: visible;
+ overflow-y: visible;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+ <h1>Map of The Dungeon Menu</h1>
+ <button onclick="myFunctionB()">Zoom - Bigger</button>
+ <button onclick="myFunction()">Zoom - Full</button>
+ <button onclick="myFunctionA()">Legend</button>
+ <button onclick="myFunctionC()">Codes</button>
+</div>
+
+<div id="legend" class="legend">
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><img class="one" src="L01.png"></td><td>Rotative Pads 180°</td></tr>
+<tr><td><img class="one" src="L02.png"></td><td>Rotative Pads 90° Clockwise</td></tr>
+<tr><td><img class="one" src="L03.png"></td><td>Rotative Pads 90° Anti-Clockwise</td></tr>
+<tr><td><img class="one" src="L04.png"></td><td>Barrier</td></tr>
+<tr><td><img class="one" src="L05.png"></td><td>False Wall</td></tr>
+<tr><td><img class="one" src="L06.png"></td><td>One Way False Wall</td></tr>
+<tr><td><img class="one" src="L07.png"></td><td>Monster's Realm</td></tr>
+<tr><td><img class="one" src="L08.png"></td><td>Cheat Code</td></tr>
+<tr><td><img class="one" src="L09.png"></td><td>General Message</td></tr>
+<tr><td><img class="one" src="L10.png"></td><td>Demo Screen</td></tr>
+<tr><td><img class="one" src="L11.png"></td><td>Fountain</td></tr>
+<tr><td><img class="one" src="L12.png"></td><td>Floor Diamond</td></tr>
+<tr><td><img class="one" src="L13.png"></td><td>Teleport Pad</td></tr>
+<tr><td><img class="one" src="L14.png"></td><td>Teleport Code Destination</td></tr>
+</table>
+</div>
+        
+<div class="scroll">
+<img class="one" id ="map" src="Dungeon Map.png">
+</div>
+
+<div id="codes" class="codes">
+<table>
+<tr><th>Code</th><th>Effect</th></tr>
+<tr><td>ZNORT</td><td>Go to start</td></tr>
+<tr><td>DEUXIEME, SECOND, ZWEITE</td><td>Go to second disk area</td></tr>
+<tr><td>TROISIEME, THIRD, DRITTE</td><td>Go to third disk area</td></tr>
+<tr><td>QUATRIEME, FOURTH, VIERTE</td><td>Go to fourth disk area</td></tr>
+<tr><td colspan="2"><BR></td></tr>
+<tr><td>PARALYSIE, PARALYSIS, LAHMUNG</td><td>Monster stopped</td></tr>
+<tr><td>LOCALISATION</td><td>Monster on the map</td></tr>
+<tr><td>TELEPATHIE, TELEPATHY</td><td>Never go to prison</td></tr>
+<tr><td colspan="2"><BR></td></tr>
+<tr><td>OEIL PERCANT, PIERCING EYE, SCHARFE AUGE</td><td>No more false walls</td></tr>
+<tr><td>LEVITATION</td><td>Turn off rotating pads</td></tr>
+<tr><td>PASSE MURAILLE, WALL BREAKER, MAUERBRECHER</td><td>No forcefields</td></tr>
+<tr><td colspan="2"><BR></td></tr>
+<tr><td>PARCHEMIN, PARCHMENT, PERGAMENT</td><td>Map</td></tr>
+<tr><td colspan="2"><BR></td></tr>
+<tr><td>APPELEZ MOI DBUG, CALL ME DBUG, NENN MICH DBUG</td><td>All cheats active</td></tr>
+<tr><td>PAS DE TRICHERIE, NO CHEATING, KEIN BETRUNG</td><td>Remove cheats</td></tr>
+</table>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("map");
+  console.log(x.style.width); 
+console.log(x.style.width === "");
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "300%") {
+     x.style.width = 'unset';
+     } else {
+     x.style.width = "100%";
+     }
+}
+
+function myFunctionA() {
+  var x = document.getElementById("legend");
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+
+function myFunctionB() {
+  var x = document.getElementById("map");
+  console.log(x.style.width); 
+console.log(x.style.width === "");
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "unset") {
+     x.style.width = "300%";
+     } else {
+     x.style.width = "100%";
+     }
+}
+
+function myFunctionC() {
+  var x = document.getElementById("codes");
+  if (x.style.display === "none" || x.style.display === "") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+} 
+
+</script>
+
+</body>
+</html>
