@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {color:white;margin-top:0;margin-bottom:0;}
+p {color:white;margin-top:0;margin-bottom:0;}
+
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+background-color: #402020;
+}
+
+td, th {
+color:white;
+margin-top:0;
+margin-bottom:0;
+border: 1px solid #bbbbbb;
+text-align:left;
+padding: 4px;
+}
+
+img.one {
+  width: 100%;
+}
+
+div.top {
+ position: fixed;
+ border-style: solid;
+ border-color: #BBBBBB;
+ background-color: #806040;
+ padding:4px;
+ top: 10px;
+ left: 10px;
+}
+
+
+div.scroll {
+ margin:4px, 4px;
+ padding:4px;
+ width: 100%;
+ height: 500px;
+ overflow-x: visible;
+ overflow-y: visible;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+ <h1>Map of Treasure Island Dizzy</h1>
+ <button onclick="myFunctionB()">Zoom - Bigger</button>
+ <button onclick="myFunction()">Zoom - Full</button>
+
+</div>
+
+
+        
+<div class="scroll">
+<img class="one" id ="map" src="treasure.jpg">
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("map");
+  console.log(x.style.width); 
+console.log(x.style.width === "");
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "300%") {
+     x.style.width = 'unset';
+     } else {
+     x.style.width = "100%";
+     }
+}
+
+
+function myFunctionB() {
+  var x = document.getElementById("map");
+  console.log(x.style.width); 
+console.log(x.style.width === "");
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "unset") {
+     x.style.width = "300%";
+     } else {
+     x.style.width = "100%";
+     }
+}
+
+
+
+</script>
+
+</body>
+</html>
