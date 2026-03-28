@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Map of the Dungeon Menu from The Phaleon Gigademo</title>
 <style>
 h1 {color:white;margin-top:0;margin-bottom:0;}
 p {color:white;margin-top:0;margin-bottom:0;}
@@ -23,7 +22,7 @@ padding: 4px;
 }
 
 img.one {
-  width: 90%;
+  width: 100%;
 }
 
 div.top {
@@ -44,8 +43,8 @@ div.legend {
  padding:  4px;
  bottom:   5px;
  left:     10px;
- width:    110;
- height:   80%;
+ width:    100;
+ height:   40%;
  overflow-y: auto;
 }
 
@@ -59,33 +58,29 @@ div.codes {
  display:  none;
  bottom:   5px;
  right:    10px;
- width:    210;
- height:   40%;
+ width:    200;
+ height:   20%;
  overflow-y: auto;
 }
 
 div.scroll {
- margin-top: 4px;
- margin-bottom: 4px;
- margin-right: 4px;
- margin-left: 10%;
+ margin:4px, 4px;
  padding:4px;
  width: 100%;
  height: 500px;
  overflow-x: visible;
  overflow-y: visible;
- background-color: #402020;
 }
 
 html { background-color: #402020; }
 body { background-color: #402020; }
-  
+
 </style>
 </head>
 
 <body>
 <div class="top">
- <h1>Map of the Dungeon Menu from The Phaleon Gigademo</h1>
+ <h1>Map of The Dungeon Menu</h1>
  <button onclick="myFunctionB()">Zoom - Bigger</button>
  <button onclick="myFunction()">Zoom - Full</button>
  <button onclick="myFunctionA()">Legend</button>
@@ -144,10 +139,10 @@ function myFunction() {
   var x = document.getElementById("map");
   console.log(x.style.width); 
 console.log(x.style.width === "");
-  if (x.style.width === "90%" || x.style.width === "" || x.style.width === "300%") {
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "300%") {
      x.style.width = 'unset';
      } else {
-     x.style.width = "90%";
+     x.style.width = "100%";
      }
 }
 
@@ -164,10 +159,10 @@ function myFunctionB() {
   var x = document.getElementById("map");
   console.log(x.style.width); 
 console.log(x.style.width === "");
-  if (x.style.width === "90%" || x.style.width === "" || x.style.width === "unset") {
+  if (x.style.width === "100%" || x.style.width === "" || x.style.width === "unset") {
      x.style.width = "300%";
      } else {
-     x.style.width = "90%";
+     x.style.width = "100%";
      }
 }
 
